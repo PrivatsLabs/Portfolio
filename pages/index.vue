@@ -136,7 +136,7 @@
       </div>
 
       <div class="col-xl-8">
-        <h5>Mes projets</h5>
+        <h5>Mes projets recent</h5>
         <br />
         <div class="top-projet">
           <div class="row">
@@ -173,9 +173,8 @@
         <br />
       </div>
     </div>
-    <footer>
-      <span style="text-align: center">© 2024 Privat's labs, Inc.</span>
-    </footer>
+    
+      <span style="text-align: center; margin: 10px auto 10px auto;">© 2024 Privat's labs, Inc.</span>
   </div>
 </template>
 
@@ -190,6 +189,11 @@ export default {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -238,17 +242,20 @@ body {
   width: 290px;
   border: 1px solid;
   border-radius: 15px;
+  cursor: pointer;
   box-shadow: 0 3px 9px rgba(142, 139, 139, 0.1); /* Ombre portée */
 }
 
 .tech img {
   width: 60px;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .tech svg {
   width: 50px;
   height: 60px;
+  cursor: pointer;
 }
 
 
