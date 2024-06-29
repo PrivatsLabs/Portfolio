@@ -217,6 +217,19 @@ export default {
     const col_xl_4 = document.querySelector('.col-xl-4');
     col_xl_4.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
     col_xl_4.classList.add(newMode + "-mode");
+
+     // Mettre à jour la couleur du thème meta theme-color
+     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      // Définir la couleur en fonction du mode
+      if (newMode === 'dark') {
+        themeColorMeta.setAttribute('content', '#0d1117'); // Noir pour le mode sombre
+      } else {
+        themeColorMeta.setAttribute('content', '#ffffff'); // Blanc pour le mode clair (par défaut)
+      }
+    }
+
+
   },
 },
 
