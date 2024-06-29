@@ -11,7 +11,7 @@
 
         <br />
 
-        <img class="profil" src="/unnamed.jpg" width="250" /> <br />
+        <img class="profil" src="/unnamed.jpg" /> <br />
         <br />
         <h4 class="nom">Privat Kouadio</h4>
         <p class="prefession">Developpeur web et application mobile</p>
@@ -226,6 +226,7 @@ export default {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .white-mode {
@@ -253,6 +254,10 @@ body {
   padding-right: 10px;
 }
 
+.row .col-xl-4 .profil{
+  width: 240px;
+}
+
 .col-xl-4 .btn-contacter {
   width: 100%;
   height: 35px;
@@ -262,6 +267,10 @@ body {
 
 .profil {
   border-radius: 100%;
+}
+
+.bio{
+  text-align: start;
 }
 .col-xl-8 {
   padding-right: 160px;
@@ -475,6 +484,11 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
+
+  .row .col-xl-4 .profil{
+  width: 140px;
+}
+
   .col-xl-4 {
     padding-left: 10px;
     padding-top: 50px;
