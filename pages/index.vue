@@ -149,7 +149,7 @@
         <br />
         <div class="top-projet">
           <div class="row">
-            <div class="col-xl-6">
+            <div class="col-sm">
               <div>
                 <p class="legend">E-commerce site web</p>
                 <a href="https://mshop-app.vercel.app/" target="_blanck">
@@ -158,22 +158,21 @@
               </div>
             </div>
 
-            <div class="col-xl-6">
+            <div class="col-sm">
               <div>
-                <p class="legend"></p>
+                <p class="legend">Lidl france</p>
                 <img src="/preview/preview_3.png" alt="" />
               </div>
             </div>
           </div>
-          <br />
-          <div class="row">
-            <div class="col-xl-6">
+
+            <div class="col-sm">
               <div>
                 <p class="legend"></p>
                 <img src="/preview/preview_2.png" alt="" />
               </div>
             </div>
-          </div>
+
         </div>
         <br />
         <br />
@@ -301,10 +300,11 @@ body {
 
   overflow-y: auto;
 }
-.col-xl-8 .col-xl-6 {
+.col-xl-8 .col-sm {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  margin-bottom: 25px;
 }
 .col-xl-8 .top-projet {
   border: 1px solid rgba(128, 128, 128, 0.349);
@@ -312,7 +312,7 @@ body {
   padding: 15px;
 }
 
-.col-xl-8 .col-xl-6 img {
+.col-xl-8 .col-sm img {
   width: 250px;
   height: 480px;
   border: 1px solid;
@@ -321,7 +321,7 @@ body {
   box-shadow: 0 3px 9px rgba(142, 139, 139, 0.1); /* Ombre portée */
 }
 
-.col-xl-8 .col-xl-6 a {
+.col-xl-8 .col-sm a {
   color: black;
 }
 
@@ -527,7 +527,7 @@ body {
     overflow-y: auto;
   }
 
-  .col-xl-8 .col-xl-6 {
+  .col-xl-8 .col-sm {
     margin-bottom: 50px;
   }
   .col-xl-8 .top-projet {
