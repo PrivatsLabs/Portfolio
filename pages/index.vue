@@ -2,15 +2,14 @@
   <div class="wrapper">
     <div class="row">
       <div class="col-xl-4">
-
         <label class="ui-switch">
-          <input type="checkbox" />
+          <input @click="toggleMode" type="checkbox" />
           <div class="slider">
             <div class="circle"></div>
           </div>
         </label>
 
-        <br>
+        <br />
 
         <img class="profil" src="/unnamed.jpg" width="250" /> <br />
         <br />
@@ -190,14 +189,53 @@
 <script>
 export default {
   name: "IndexPage",
+
+  data() {
+    return {
+      mode: "white",
+    };
+  },
+  methods: {
+    toggleMode() {
+      if (this.mode === "white") {
+        this.mode = "dark";
+      } else {
+        this.mode = "white";
+      }
+    },
+  },
+  watch: {
+  mode(newMode) {
+    // Mettre à jour la classe du body lorsque le mode change
+    document.body.className = newMode + "-mode";
+    
+     // Ajouter la classe correspondant au mode à l'élément `.wrapper`
+     const wrapper = document.querySelector('.wrapper');
+    wrapper.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
+    wrapper.classList.add(newMode + "-mode");
+  },
+},
+
 };
 </script>
+
+
 
 <style scoped>
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+}
+
+.white-mode {
+  background-color: white !important;
+  color: black !important;
+}
+
+.dark-mode {
+  background-color: #0d1117 !important; /* Choisissez votre couleur de fond sombre */
+  color: white !important; /* Exemple : ajustez la couleur du texte pour un contraste adéquat */
 }
 
 .wrapper {
@@ -266,9 +304,6 @@ body {
   height: 60px;
   cursor: pointer;
 }
-
-
-
 
 /* ------------------------------------------------------------------------------------------------- */
 
@@ -390,9 +425,13 @@ body {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,8 +441,8 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-  ;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .slider .circle::before {
@@ -421,12 +460,12 @@ body {
 
 /* actions */
 
-.ui-switch input:checked+.slider .circle {
+.ui-switch input:checked + .slider .circle {
   left: calc(100% - var(--circle-diameter));
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
 }
 
-.ui-switch input:active+.slider .circle::before {
+.ui-switch input:active + .slider .circle::before {
   -webkit-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
