@@ -13,7 +13,7 @@
 
         <img class="profil" src="/unnamed.jpg" /> <br />
         <br />
-        <h4 class="nom">Privat Kouadio</h4>
+        <h4 class="nom">Privat Kouadio <img src="/qualite.png" width="20"></h4>
         <p class="prefession">Developpeur web et application mobile</p>
         <br />
 
@@ -210,9 +210,13 @@ export default {
     document.body.className = newMode + "-mode";
     
      // Ajouter la classe correspondant au mode à l'élément `.wrapper`
-     const wrapper = document.querySelector('.wrapper');
+    const wrapper = document.querySelector('.wrapper');
     wrapper.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
     wrapper.classList.add(newMode + "-mode");
+
+    const col_xl_4 = document.querySelector('.col-xl-4');
+    col_xl_4.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
+    col_xl_4.classList.add(newMode + "-mode");
   },
 },
 
@@ -252,6 +256,9 @@ body {
   padding-left: 160px;
   padding-top: 50px;
   padding-right: 10px;
+  position: fixed;
+  left: 0;
+  background-color: white;
 }
 
 .row .col-xl-4 .profil{
@@ -276,7 +283,9 @@ body {
   padding-right: 160px;
   padding-left: 50px;
   padding-top: 50px;
+  margin-left: auto;
   min-height: 100vh;
+
   overflow-y: auto;
 }
 .col-xl-8 .col-xl-6 {
@@ -292,6 +301,7 @@ body {
 
 .col-xl-8 .col-xl-6 img {
   width: 250px;
+  height: 480px;
   border: 1px solid;
   border-radius: 15px;
   cursor: pointer;
@@ -490,14 +500,15 @@ body {
 }
 
   .col-xl-4 {
-    padding-left: 10px;
+    padding-left: 20px;
     padding-top: 50px;
-    padding-right: 10px;
+    padding-right: 20px;
+    position: relative;
   }
 
   .col-xl-8 {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     padding-top: 50px;
     min-height: 100vh;
     overflow-y: auto;
