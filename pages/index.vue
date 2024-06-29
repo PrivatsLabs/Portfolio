@@ -96,7 +96,7 @@
         <br />
         <p class="bio">
           🚀 Passionné par le développement web, j'ai décidé de me plonger corps
-          et âme dans NUXT.js pour atteindre une expertise hors norme dans ce
+          et âme dans <span style="color: #00DC82; font-weight: bolder;">Nuxt js</span> pour atteindre une expertise hors norme dans ce
           framework modern.
         </p>
         <br />
