@@ -2,27 +2,23 @@
   <div class="wrapper">
     <div class="row">
       <div class="col-xl-4">
-
         <label class="ui-switch">
           <input @click="toggleMode" type="checkbox" />
           <div class="slider">
             <div class="circle"></div>
           </div>
         </label>
-        <br>
+        <br />
 
         <div class="head">
-
           <img class="profil" src="/unnamed.jpg" /> <br />
           <br />
-        <div>
-
-          <h4 class="nom">
-            Privat Kouadio <img src="/qualite.png" width="20" />
-          </h4>
-          <p class="prefession">Developpeur web et application mobile</p>
-        </div>
-
+          <div>
+            <h4 class="nom">
+              Privat Kouadio <img src="/qualite.png" width="20" />
+            </h4>
+            <p class="prefession">Developpeur web et application mobile</p>
+          </div>
         </div>
         <br />
 
@@ -114,7 +110,10 @@
         <div class="tech">
           <h5>Mes technologie</h5>
           <br />
-          <div class="row justify-space-between" style="justify-content: space-between;">
+          <div
+            class="row justify-space-between"
+            style="justify-content: space-between"
+          >
             <div class="col">
               <img src="/logo/nuxt.png" alt="" />
             </div>
@@ -232,13 +231,20 @@ export default {
         // Définir la couleur en fonction du mode
         if (newMode === "dark") {
           themeColorMeta.setAttribute("content", "#020420");
-          document.body.style.backgroundColor='#020420';
-           // Noir pour le mode sombre
+          document.body.style.backgroundColor = "#020420";
+          // Récupère tous les éléments <p> dans une liste
+          const paragraphs = document.getElementsByTagName("p");
+
+          // Parcourt tous les éléments <p> et applique le style
+          for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = "#758398";
+          }
+          // Noir pour le mode sombre
         } else {
           themeColorMeta.setAttribute("content", "#ffffff");
-          document.body.style.backgroundColor='white';
+          document.body.style.backgroundColor = "white";
 
-           // Blanc pour le mode clair (par défaut)
+          // Blanc pour le mode clair (par défaut)
         }
       }
     },
@@ -289,6 +295,10 @@ body {
   width: 240px;
 }
 
+.col-xl-4 p {
+  color: #8e9db2;
+}
+
 .col-xl-4 .btn-contacter {
   width: 100%;
   height: 35px;
@@ -302,6 +312,8 @@ body {
 
 .bio {
   text-align: start;
+  font-size: 1.1rem;
+
 }
 .col-xl-8 {
   padding-right: 160px;
@@ -522,16 +534,25 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .row .col-xl-4 .profil {
-    width: 70px;
+    width: 75px;
     height: auto;
     margin-right: 10px;
   }
 
-  .row .head{
+  .row .head {
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
+    width: 300px;
   }
 
+  .col-xl-4 .tech {
+    width: 300px;
+  }
+
+  .col-xl-4 .social-buttons {
+    width: 290px;
+  }
   .col-xl-4 {
     padding-left: 20px;
     padding-top: 30px;
