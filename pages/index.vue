@@ -2,19 +2,30 @@
   <div class="wrapper">
     <div class="row">
       <div class="col-xl-4">
+
         <label class="ui-switch">
           <input @click="toggleMode" type="checkbox" />
           <div class="slider">
             <div class="circle"></div>
           </div>
         </label>
+        <br> <br>
 
-        <br />
+        <div class="head">
 
-        <img class="profil" src="/unnamed.jpg" /> <br />
-        <br />
-        <h4 class="nom">Privat Kouadio <img src="/qualite.png" width="20"></h4>
-        <p class="prefession">Developpeur web et application mobile</p>
+          <br />
+
+          <img class="profil" src="/unnamed.jpg" /> <br />
+          <br />
+        <div>
+
+          <h4 class="nom">
+            Privat Kouadio <img src="/qualite.png" width="20" />
+          </h4>
+          <p class="prefession">Developpeur web et application mobile</p>
+        </div>
+
+        </div>
         <br />
 
         <div class="social-buttons">
@@ -96,8 +107,9 @@
         <br />
         <p class="bio">
           🚀 Passionné par le développement web, j'ai décidé de me plonger corps
-          et âme dans <span style="color: #00DC82; font-weight: bolder;">Nuxt js</span> pour atteindre une expertise hors norme dans ce
-          framework modern.
+          et âme dans
+          <span style="color: #00dc82; font-weight: bolder">Nuxt js</span> pour
+          atteindre une expertise hors norme dans ce framework modern.
         </p>
         <br />
 
@@ -166,13 +178,12 @@
             </div>
           </div>
 
-            <div class="col-sm">
-              <div>
-                <p class="legend"></p>
-                <img src="/preview/preview_2.png" alt="" />
-              </div>
+          <div class="col-sm">
+            <div>
+              <p class="legend"></p>
+              <img src="/preview/preview_2.png" alt="" />
             </div>
-
+          </div>
         </div>
         <br />
         <br />
@@ -204,34 +215,31 @@ export default {
     },
   },
   watch: {
-  mode(newMode) {
-    // Mettre à jour la classe du body lorsque le mode change
-    document.body.className = newMode + "-mode";
-    
-     // Ajouter la classe correspondant au mode à l'élément `.wrapper`
-    const wrapper = document.querySelector('.wrapper');
-    wrapper.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
-    wrapper.classList.add(newMode + "-mode");
+    mode(newMode) {
+      // Mettre à jour la classe du body lorsque le mode change
+      document.body.className = newMode + "-mode";
 
-    const col_xl_4 = document.querySelector('.col-xl-4');
-    col_xl_4.classList.remove('light-mode', 'dark-mode'); // Supprimer les classes existantes
-    col_xl_4.classList.add(newMode + "-mode");
+      // Ajouter la classe correspondant au mode à l'élément `.wrapper`
+      const wrapper = document.querySelector(".wrapper");
+      wrapper.classList.remove("light-mode", "dark-mode"); // Supprimer les classes existantes
+      wrapper.classList.add(newMode + "-mode");
 
-     // Mettre à jour la couleur du thème meta theme-color
-     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-    if (themeColorMeta) {
-      // Définir la couleur en fonction du mode
-      if (newMode === 'dark') {
-        themeColorMeta.setAttribute('content', '#0d1117'); // Noir pour le mode sombre
-      } else {
-        themeColorMeta.setAttribute('content', '#ffffff'); // Blanc pour le mode clair (par défaut)
+      const col_xl_4 = document.querySelector(".col-xl-4");
+      col_xl_4.classList.remove("light-mode", "dark-mode"); // Supprimer les classes existantes
+      col_xl_4.classList.add(newMode + "-mode");
+
+      // Mettre à jour la couleur du thème meta theme-color
+      const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeColorMeta) {
+        // Définir la couleur en fonction du mode
+        if (newMode === "dark") {
+          themeColorMeta.setAttribute("content", "#020420"); // Noir pour le mode sombre
+        } else {
+          themeColorMeta.setAttribute("content", "#ffffff"); // Blanc pour le mode clair (par défaut)
+        }
       }
-    }
-
-
+    },
   },
-},
-
 };
 </script>
 
@@ -242,7 +250,8 @@ export default {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .white-mode {
@@ -251,7 +260,7 @@ export default {
 }
 
 .dark-mode {
-  background-color: #0d1117 !important; /* Choisissez votre couleur de fond sombre */
+  background-color: #020420 !important; /* Choisissez votre couleur de fond sombre */
   color: white !important; /* Exemple : ajustez la couleur du texte pour un contraste adéquat */
 }
 
@@ -273,7 +282,7 @@ body {
   background-color: white;
 }
 
-.row .col-xl-4 .profil{
+.row .col-xl-4 .profil {
   width: 240px;
 }
 
@@ -288,7 +297,7 @@ body {
   border-radius: 100%;
 }
 
-.bio{
+.bio {
   text-align: start;
 }
 .col-xl-8 {
@@ -342,6 +351,8 @@ body {
 .social-buttons {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .social-button {
@@ -351,7 +362,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin: 0 10px;
+  margin: 0px;
   background-color: #fff;
   box-shadow: 0px 0px 4px #00000027;
   transition: 0.3s;
@@ -507,14 +518,20 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
+  .row .col-xl-4 .profil {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+  }
 
-  .row .col-xl-4 .profil{
-  width: 140px;
-}
+  .row .head{
+    display: flex;
+    justify-content: space-between;
+  }
 
   .col-xl-4 {
     padding-left: 20px;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-right: 20px;
     position: relative;
   }
