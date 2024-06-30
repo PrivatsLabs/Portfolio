@@ -9,11 +9,9 @@
             <div class="circle"></div>
           </div>
         </label>
-        <br> <br>
+        <br>
 
         <div class="head">
-
-          <br />
 
           <img class="profil" src="/unnamed.jpg" /> <br />
           <br />
@@ -116,7 +114,7 @@
         <div class="tech">
           <h5>Mes technologie</h5>
           <br />
-          <div class="row">
+          <div class="row justify-space-between" style="justify-content: space-between;">
             <div class="col">
               <img src="/logo/nuxt.png" alt="" />
             </div>
@@ -233,9 +231,14 @@ export default {
       if (themeColorMeta) {
         // Définir la couleur en fonction du mode
         if (newMode === "dark") {
-          themeColorMeta.setAttribute("content", "#020420"); // Noir pour le mode sombre
+          themeColorMeta.setAttribute("content", "#020420");
+          document.body.style.backgroundColor='#020420';
+           // Noir pour le mode sombre
         } else {
-          themeColorMeta.setAttribute("content", "#ffffff"); // Blanc pour le mode clair (par défaut)
+          themeColorMeta.setAttribute("content", "#ffffff");
+          document.body.style.backgroundColor='white';
+
+           // Blanc pour le mode clair (par défaut)
         }
       }
     },
