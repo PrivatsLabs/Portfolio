@@ -178,18 +178,20 @@
           <div class="col-sm">
             <div>
               <p class="legend" style="font-weight: bolder;">LafyShop</p> <br>
+              <a href="https://market-two-beta.vercel.app" target="_blanck">
               <img src="/preview/preview_2.png" alt="" />
+              </a>
             </div>
           </div>
         </div>
-        <br />
-        <br />
+        <br>
+        <span style="text-align: center; color: grey; margin: 10px auto 10px auto ; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+      >© 2024 Privat's labs, Inc.</span
+    >
       </div>
     </div>
 
-    <span style="text-align: center; margin: 10px auto 10px auto"
-      >© 2024 Privat's labs, Inc.</span
-    >
+    
   </div>
 </template>
 
@@ -291,9 +293,13 @@ body {
   background-color: white;
 }
 
+
+
 .row .col-xl-4 .profil {
-  width: 240px;
-}
+    width: 140px;
+    height: 150px;
+  }
+
 
 .col-xl-4 p {
   color: #8e9db2;
@@ -320,9 +326,7 @@ body {
   padding-left: 50px;
   padding-top: 50px;
   margin-left: auto;
-  min-height: 100vh;
-
-  overflow-y: auto;
+height: 100vh;
 }
 .col-xl-8 .col-sm {
   display: flex;
@@ -334,6 +338,8 @@ body {
   border: 1px solid rgba(128, 128, 128, 0.349);
   border-radius: 7px;
   padding: 15px;
+  height: 75vh;
+  overflow-y: scroll;
 }
 
 .col-xl-8 .col-sm img {
