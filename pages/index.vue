@@ -160,24 +160,24 @@
           <div class="row">
             <div class="col-sm">
               <div>
-                <p class="legend">E-commerce site web</p>
+                <p class="legend" style="font-weight: bolder;">E-commerce site web</p> <br>
                 <a href="https://mshop-app.vercel.app/" target="_blanck">
                   <img src="/preview/preview-1.png" alt="" />
                 </a>
               </div>
             </div>
 
-            <div class="col-sm">
+            <!-- <div class="col-sm">
               <div>
                 <p class="legend">Lidl france</p>
                 <img src="/preview/preview_3.png" alt="" />
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="col-sm">
             <div>
-              <p class="legend"></p>
+              <p class="legend" style="font-weight: bolder;">LafyShop</p> <br>
               <img src="/preview/preview_2.png" alt="" />
             </div>
           </div>
@@ -534,8 +534,8 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .row .col-xl-4 .profil {
-    width: 75px;
-    height: auto;
+    width: 80px;
+    height: 75px;
     margin-right: 10px;
   }
 
